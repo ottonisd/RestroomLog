@@ -15,29 +15,9 @@ class TravelLogGUI:
         return datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
 def main():
-    app = TravelLogGUI()
-    id_text_value = ''
-
-    st.title("Classroom Travel Log GUI")
-
-    id_text = st.text_input("Please scan ID and select.", value=id_text_value, key="id_text")
-    count_label = st.empty()
-
-    if st.button("Restroom"):
-        if id_text:
-            if id_text in app.rr_list:
-                app.update_log(f"Returned from restroom: {app.get_time()}", id_text)
-                app.rr_list.remove(id_text)
-                app.count -= 1
-            else:
-                app.update_log(f"Leaving to restroom: {app.get_time()}", id_text)
-                app.rr_list.append(id_text)
-                app.count += 1
-
-            count_label.write(f"Out to restroom: {app.count}")
-            id_text_value = ''
-        else:
-            st.write("Please scan ID and select.")
+    text_box = st.text_input("Enter text:")
+    if st.button("Clear"):
+        st.session_state.text_box = ""
 
 if __name__ == "__main__":
     main()
