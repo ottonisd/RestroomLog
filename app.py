@@ -34,6 +34,8 @@ def main():
                 app.count += 1
 
             count_label.write(f"Out to restroom: {app.count}")
+            # Clear the ID text box
+            st.session_state.id_text = ""
         else:
             st.write("Please scan ID and select.")
 
