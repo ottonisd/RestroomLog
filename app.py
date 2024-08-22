@@ -9,3 +9,4 @@ if click_clear:
     st.write(message)
     placeholder.empty()
     input = placeholder.text_input('Enter a number:', value='', key=2)
+    input  # This line is important to update the input variable
