@@ -19,14 +19,7 @@ def main():
 
     st.title("Classroom Travel Log GUI")
 
-    if 'id_text' not in st.session_state:
-        st.session_state.id_text = ''
-
-    if st.session_state.id_text == '':
-        id_text = st.text_input("Please scan ID and select.", key="id_text")
-    else:
-        id_text = st.session_state.id_text
-
+    id_text = st.text_input("Please scan ID and select.", key="id_text")
     count_label = st.empty()
 
     if st.button("Restroom"):
@@ -41,7 +34,10 @@ def main():
                 app.count += 1
 
             count_label.write(f"Out to restroom: {app.count}")
+            # Clear the text box value
             st.session_state.id_text = ''
+            # Create a new text input field with an empty value
+            st.text_input("Please scan ID and select.", value="", key="id_text")
         else:
             st.write("Please scan ID and select.")
 
