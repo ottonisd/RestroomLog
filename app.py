@@ -15,9 +15,13 @@ class TravelLogGUI:
         return datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
 def main():
-    text_box = st.text_input("Enter text:")
+    if 'text_box' not in st.session_state:
+        st.session_state.text_box = st.text_input("Enter text:")
+    else:
+        st.session_state.text_box = st.text_input("Enter text:", value="")
+
     if st.button("Clear"):
-        st.session_state.text_box = ""
+        st.session_state.text_box = st.text_input("Enter text:", value="")
 
 if __name__ == "__main__":
     main()
