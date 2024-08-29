@@ -5,23 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restroom Log</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        /* Full-page video background */
+        body, html {
             margin: 0;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #f0f0f0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden; /* Prevent scrollbars */
+        }
+        .background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensure the video covers the entire area */
+            z-index: -1; /* Place the video behind other content */
         }
         .content {
+            position: relative;
             display: flex;
             flex-direction: column;
             align-items: center;
             padding: 20px;
             border: 1px solid #ccc;
             border-radius: 5px;
-            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent background */
+            z-index: 1; /* Place the content above the video */
         }
         .container {
             margin-bottom: 10px;
@@ -30,7 +39,7 @@
             align-items: center;
         }
         .button-size {
-            width: 350px; /* Adjust width as needed */
+            width: 150px; /* Adjust width as needed */
             height: 40px; /* Adjust height as needed */
             font-size: 16px; /* Adjust font size for better readability */
             padding: 10px; /* Adds space inside the button */
@@ -42,6 +51,12 @@
     </style>
 </head>
 <body>
+    <!-- Background video -->
+    <video class="background-video" autoplay loop muted>
+        <source src="video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
     <div class="content">
         <div class="container">
             <label for="text_input1">Enter ID:</label>
