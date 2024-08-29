@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restroom Log</title>
+    <style>
 /* Full-page video background */
 body, html {
     margin: 0;
@@ -53,3 +60,28 @@ textarea {
     margin-top: 10px;
     width: 100%; /* Ensure textarea takes full width of content */
 }
+
+    </style>
+</head>
+<body>
+    <!-- Background video -->
+    <video class="background-video" autoplay loop muted>
+        <source src="TRaiderBG.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="content">
+        <div class="container">
+            <label for="text_input1">Enter ID:</label>
+            <input type="text" id="text_input1">
+            <button id="button1" class="button-size">Submit</button>
+            <button id="button2" class="button-size">Download Log</button>
+        </div>
+        <div class="container">
+            <textarea id="text_area2" rows="4" cols="50" readonly></textarea>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
