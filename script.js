@@ -37,6 +37,18 @@ document.getElementById("button1").addEventListener("click", function() {
     document.getElementById("text_input1").value = "";
 });
 
+document.addEventListener('DOMContentLoaded', (event) => {
+    const inputBox = document.getElementById('text_input1');
+    inputBox.focus(); // Focus the input box when the page loads
+
+    // Event listeners to manage focus behavior
+    inputBox.addEventListener('blur', () => {
+        setTimeout(() => {
+            inputBox.focus(); // Re-focus on the input box if it loses focus
+        }, 0);
+    });
+});
+
 function downloadLog() {
     var logString = logList.join('\n');
     var blob = new Blob([logString], { type: 'text/plain' });
