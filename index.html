@@ -12,22 +12,29 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            background-color: #f0f0f0;
         }
         .content {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
             padding: 20px;
             border: 1px solid #ccc;
             border-radius: 5px;
-            background-color: #f9f9f9;
+            background-color: #fff;
         }
         .container {
             margin-bottom: 10px;
             display: flex;
             flex-direction: column;
             align-items: center;
+        }
+        .button-size {
+            width: 150px; /* Adjust width as needed */
+            height: 40px; /* Adjust height as needed */
+            font-size: 16px; /* Adjust font size for better readability */
+            padding: 10px; /* Adds space inside the button */
+            margin: 5px; /* Adds space around the button */
         }
         textarea {
             margin-top: 10px;
@@ -39,8 +46,8 @@
         <div class="container">
             <label for="text_input1">Enter ID:</label>
             <input type="text" id="text_input1">
-            <button id="button1">Submit</button>
-            <button id="button2">Download Log</button>
+            <button id="button1" class="button-size">Submit</button>
+            <button id="button2" class="button-size">Download Log</button>
         </div>
         <div class="container">
             <textarea id="text_area2" rows="4" cols="50" readonly></textarea>
