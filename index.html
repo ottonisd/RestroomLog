@@ -7,22 +7,44 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
         }
         .container {
             margin-bottom: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        textarea {
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <label for="text_input1">Enter ID:</label>
-        <input type="text" id="text_input1">
-        <button id="button1">Submit</button>
-        <button id="button2">Download Log</button>
-    </div>
-    <div class="container">
-        <textarea id="text_area2" rows="4" cols="50" readonly></textarea>
+    <div class="content">
+        <div class="container">
+            <label for="text_input1">Enter ID:</label>
+            <input type="text" id="text_input1">
+            <button id="button1">Submit</button>
+            <button id="button2">Download Log</button>
+        </div>
+        <div class="container">
+            <textarea id="text_area2" rows="4" cols="50" readonly></textarea>
+        </div>
     </div>
 
     <script src="script.js"></script>
